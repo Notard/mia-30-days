@@ -1,0 +1,567 @@
+{
+  "version": 2,
+  "clips": {
+    "sketch": {
+      "file": "mia-drawing-v02.png",
+      "label": "미아가 책상에서 연필로 그림을 그리는 모습",
+      "duration": 4200,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "drawing",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        4,
+        3
+      ],
+      "finish": [
+        6,
+        7
+      ],
+      "contact": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "frameMs": 125,
+      "tiredFrameMs": 200,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": -0.00338,
+            "y": 0
+          }
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": -0.00677,
+            "y": 0
+          }
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0.00113,
+            "y": 0
+          }
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": -0.00226,
+            "y": 0
+          }
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": -0.00677,
+            "y": 0
+          }
+        }
+      ],
+      "foreground": {
+        "top": 0.5
+      }
+    },
+    "atelier": {
+      "file": "mia-drawing-v02.png",
+      "label": "미아가 연습한 색으로 작품을 그리는 모습",
+      "duration": 4800,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "drawing",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        4,
+        3
+      ],
+      "finish": [
+        5,
+        6,
+        7
+      ],
+      "contact": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "frameMs": 125,
+      "tiredFrameMs": 200,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": -0.00338,
+            "y": 0
+          }
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": -0.00677,
+            "y": 0
+          }
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0.00113,
+            "y": 0
+          }
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": -0.00226,
+            "y": 0
+          }
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": -0.00677,
+            "y": 0
+          }
+        }
+      ],
+      "foreground": {
+        "top": 0.5
+      }
+    },
+    "cook": {
+      "file": "mia-cooking-v02.png",
+      "label": "미아가 냄비에 담긴 수프를 젓는 모습",
+      "duration": 4200,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "cooking",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        4,
+        5,
+        4,
+        3
+      ],
+      "finish": [
+        6,
+        7
+      ],
+      "contact": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "frameMs": 125,
+      "tiredFrameMs": 200,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0.02367,
+            "y": 0
+          }
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0.04059,
+            "y": 0.00225
+          }
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0.05524,
+            "y": 0.00225
+          }
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0,
+            "y": 0.01127
+          }
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": true,
+          "offset": {
+            "x": 0.02706,
+            "y": 0.01127
+          }
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0.04284,
+            "y": 0.01127
+          }
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0.05862,
+            "y": 0.01127
+          }
+        }
+      ],
+      "foreground": {
+        "top": 0.58
+      }
+    },
+    "rest": {
+      "file": "mia-resting-v02.png",
+      "label": "미아가 은휘 인형 안에서 담요를 덮고 쉬는 모습",
+      "duration": 4200,
+      "columns": 4,
+      "rows": 2,
+      "base": 2,
+      "mask": "resting",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "finish": [
+        4,
+        5
+      ],
+      "contact": [],
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "frameMs": 125,
+      "tiredFrameMs": 200,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "contact": false,
+          "offset": {
+            "x": 0,
+            "y": 0
+          }
+        }
+      ],
+      "foreground": {
+        "eyes": {
+          "left": 0.12,
+          "top": 0.44,
+          "right": 0.57,
+          "bottom": 0.68
+        }
+      }
+    }
+  },
+  "reactions": {
+    "file": "mia-resting-v02.png",
+    "happy": 6,
+    "tired": 7
+  },
+  "layerRule": "Complete registered pose behind fixed foreground furniture. Rest uses fixed plush silhouette and eyelids. No dissolves."
+}

@@ -1,0 +1,1266 @@
+{
+  "version": 3,
+  "park": "hanriver-autumn-v01.png",
+  "clips": {
+    "sketch": {
+      "file": "mia-drawing-v02.png",
+      "label": "미아가 책상에서 연필로 그림을 그리는 모습",
+      "duration": 4200,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "drawing",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        4,
+        3
+      ],
+      "finish": [
+        6,
+        7
+      ],
+      "contact": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "frameMs": 125,
+      "tiredRate": 1.6,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00338,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00677,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00113,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00226,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00677,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        }
+      ]
+    },
+    "atelier": {
+      "file": "mia-drawing-v02.png",
+      "label": "미아가 연습한 색으로 작품을 그리는 모습",
+      "duration": 4800,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "drawing",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        4,
+        3
+      ],
+      "finish": [
+        5,
+        6,
+        7
+      ],
+      "contact": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "frameMs": 125,
+      "tiredRate": 1.6,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00338,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00677,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00113,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00226,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00677,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        }
+      ]
+    },
+    "cook": {
+      "file": "mia-cooking-v02.png",
+      "label": "미아가 냄비에 담긴 수프를 젓는 모습",
+      "duration": 4200,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "cooking",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        4,
+        5,
+        4,
+        3
+      ],
+      "finish": [
+        6,
+        7
+      ],
+      "contact": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "frameMs": 125,
+      "tiredRate": 1.6,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.02367,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.04059,
+            0.00225
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.05524,
+            0.00225
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0.01127
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.02706,
+            0.01127
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.04284,
+            0.01127
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.05862,
+            0.01127
+          ],
+          "contact": false,
+          "excluded": false
+        }
+      ]
+    },
+    "rest": {
+      "file": "mia-resting-v02.png",
+      "label": "미아가 은휘 인형 안에서 담요를 덮고 쉬는 모습",
+      "duration": 4200,
+      "columns": 4,
+      "rows": 2,
+      "base": 2,
+      "mask": "resting",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        2,
+        3
+      ],
+      "finish": [
+        4,
+        5
+      ],
+      "contact": [],
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "frameMs": 125,
+      "tiredRate": 1.6,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        }
+      ]
+    },
+    "talk": {
+      "file": "mia-talking-v02.png",
+      "label": "미아가 의자에서 듣고 손짓하며 이야기하는 모습",
+      "duration": 4200,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "talking",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        5,
+        4,
+        5,
+        3
+      ],
+      "finish": [
+        6,
+        7
+      ],
+      "contact": [],
+      "frameMs": 220,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "tiredRate": 1.6,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.06201,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.08005,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.07779,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.06201,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.08005,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.07779,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        }
+      ]
+    },
+    "chores": {
+      "file": "mia-cleaning-v02.png",
+      "label": "미아가 천을 쥔 손과 팔을 움직여 탁자를 닦는 모습",
+      "duration": 4200,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "cleaning",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        5,
+        3
+      ],
+      "finish": [
+        6,
+        7
+      ],
+      "contact": [
+        1,
+        2,
+        3,
+        5
+      ],
+      "frameMs": 180,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "tiredRate": 1.6,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00225,
+            0
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0.00225
+          ],
+          "contact": false,
+          "excluded": true
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0.00225
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0.00225
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            -0.00225,
+            0.00225
+          ],
+          "contact": false,
+          "excluded": false
+        }
+      ]
+    },
+    "walk": {
+      "file": "mia-walking-v04.png",
+      "label": "미아가 한강 공원에서 발을 딛고 부드럽게 산책하는 모습",
+      "duration": 3950,
+      "outdoor": true,
+      "columns": 4,
+      "rows": 3,
+      "base": 0,
+      "mask": "walking",
+      "prepare": [
+        0
+      ],
+      "loop": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        8,
+        7,
+        5,
+        6,
+        9,
+        11
+      ],
+      "finish": [
+        0
+      ],
+      "contact": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11
+      ],
+      "frameMs": 125,
+      "atlas": {
+        "width": 1448,
+        "height": 1086,
+        "cellWidth": 362,
+        "cellHeight": 362
+      },
+      "rootMotion": {
+        "frames": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          8,
+          7,
+          5,
+          6,
+          9,
+          11
+        ],
+        "roots": [
+          0,
+          0.06767955801104972,
+          0.15331491712707182,
+          0.1685082872928177,
+          0.3453038674033149,
+          0.3425414364640884,
+          0.3328729281767956,
+          0.3632596685082873,
+          0.3812154696132597,
+          0.48066298342541436,
+          0.6450276243093923
+        ],
+        "stance": [
+          0.675414364640884,
+          0.6077348066298343,
+          0.5220994475138122,
+          0.5069060773480663,
+          0.3301104972375691,
+          0.3328729281767956,
+          0.669889502762431,
+          0.6395027624309392,
+          0.6215469613259669,
+          0.5220994475138122,
+          0.35773480662983426
+        ],
+        "stride": 0.6671270718232044
+      },
+      "excluded": [
+        10
+      ],
+      "frames": [
+        {
+          "frame": 0,
+          "x": 0,
+          "y": 0,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            0,
+            0.0027624309392265192
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 1,
+          "x": 362,
+          "y": 0,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            0.03038674033149171,
+            0
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 2,
+          "x": 724,
+          "y": 0,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            0.029005524861878452,
+            0
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 3,
+          "x": 1086,
+          "y": 0,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            0.0013812154696132596,
+            0
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 4,
+          "x": 0,
+          "y": 362,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            -0.020718232044198894,
+            0.024861878453038673
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 5,
+          "x": 362,
+          "y": 362,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            -0.031767955801104975,
+            0.022099447513812154
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 6,
+          "x": 724,
+          "y": 362,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            -0.022099447513812154,
+            0.016574585635359115
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 7,
+          "x": 1086,
+          "y": 362,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            -0.020718232044198894,
+            0.019337016574585635
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 8,
+          "x": 0,
+          "y": 724,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            -0.0055248618784530384,
+            0.03591160220994475
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 9,
+          "x": 362,
+          "y": 724,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            -0.017955801104972375,
+            0.03038674033149171
+          ],
+          "excluded": false
+        },
+        {
+          "frame": 10,
+          "x": 724,
+          "y": 724,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            -0.027624309392265192,
+            0.027624309392265192
+          ],
+          "excluded": true
+        },
+        {
+          "frame": 11,
+          "x": 1086,
+          "y": 724,
+          "width": 362,
+          "height": 362,
+          "offset": [
+            -0.0055248618784530384,
+            0.03314917127071823
+          ],
+          "excluded": false
+        }
+      ]
+    },
+    "picnic": {
+      "file": "mia-picnic-v02.png",
+      "label": "미아가 한강 피크닉에서 간식을 집어 먹고 내려놓는 모습",
+      "duration": 4800,
+      "outdoor": true,
+      "columns": 4,
+      "rows": 2,
+      "base": 0,
+      "mask": "picnic",
+      "prepare": [
+        0,
+        1
+      ],
+      "loop": [
+        2,
+        3,
+        4,
+        5,
+        3,
+        2
+      ],
+      "finish": [
+        6,
+        7
+      ],
+      "contact": [
+        1,
+        4,
+        6
+      ],
+      "frameMs": 260,
+      "atlas": {
+        "width": 1774,
+        "height": 887,
+        "cellWidth": 443.5,
+        "cellHeight": 443.5
+      },
+      "anchor": {
+        "x": 0.5,
+        "y": 1
+      },
+      "prepareMs": 600,
+      "finishMs": 600,
+      "tiredRate": 1.6,
+      "frames": [
+        {
+          "index": 0,
+          "x": 0,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 1,
+          "x": 443.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00113,
+            0.00225
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 2,
+          "x": 887,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00113,
+            0
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 3,
+          "x": 1330.5,
+          "y": 0,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00225,
+            0.00225
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 4,
+          "x": 0,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00113,
+            0.01804
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 5,
+          "x": 443.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00338,
+            0.01804
+          ],
+          "contact": false,
+          "excluded": false
+        },
+        {
+          "index": 6,
+          "x": 887,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00113,
+            0.01804
+          ],
+          "contact": true,
+          "excluded": false
+        },
+        {
+          "index": 7,
+          "x": 1330.5,
+          "y": 443.5,
+          "w": 443.5,
+          "h": 443.5,
+          "offset": [
+            0.00113,
+            0.01804
+          ],
+          "contact": false,
+          "excluded": false
+        }
+      ]
+    }
+  },
+  "reactions": {
+    "file": "mia-resting-v02.png",
+    "happy": 6,
+    "tired": 7
+  }
+}
