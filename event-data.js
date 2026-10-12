@@ -1,8 +1,10 @@
 import {growthEventFor} from './growth-events.js';
 import {eventGrowth,statValue} from './growth.js';
 import {stories} from "./story-data.js";
+import {storyArcFor} from './story-arcs.js';
 export function eventFor(s){
-  const growth=growthEventFor(s);if(growth)return growth;
+  const arc=storyArcFor(s);
+  const growth=growthEventFor(s);if(growth)return {...growth,chapter:arc?.chapter,recall:arc?.recall};
   const k = s.goal==='home' ? 'trust' : s.goal;
   const goalWord = {art:'그림',cook:'요리',courage:'나들이',home:'편안한 생활'}[s.goal]||'일상';
   const skillWord={art:'표현',cook:'생활',courage:'용기',trust:'신뢰'}[k];
@@ -64,7 +66,12 @@ export function eventFor(s){
     if(fallback){reply='있는 간식도 좋아. 내일 보여 줄 건 내가 골라 둘게.';mood='happy';}
     const delta=eventGrowth(s,c);let bonus='';
     if(s.day===2&&c.id==='b'&&statValue(s,'curiosity')>=25){delta[k]=(delta[k]||0)+4;bonus=' 호기심 덕분에 남은 준비물의 새 쓰임을 찾아 성장 4도 얻어요.';}
+    if(s.day===5&&c.id==='a'&&(s[k]>=24||statValue(s,'independence')>=30)){
+      const earlier=s.history.find(h=>h.day===4&&h.slot===2&&!h.eventId?.startsWith('growth-'))?.choiceId;
+      if(earlier==='a'){delta.independence=(delta.independence||0)+3;bonus+=' 기다려 준 기억 덕분에 자립도 3 자라요.';}
+      if(earlier==='b'){delta.focus=(delta.focus||0)+3;bonus+=' 배운 순서를 떠올려 집중도 3 자라요.';}
+    }
     return {...c,delta,label:fallback||!prose.label?c.label:expand(prose.label),desc:(fallback||!prose.desc?c.desc:expand(prose.desc))+bonus,reply,mood};
   });
-  return {...base,id:scene.id,branch:['연습에서 이어진 이야기','마음에서 이어진 이야기','쉼에서 이어진 이야기'][branch],title:expand(scene.title),text:expand(scene.text),choices};
+  return {...base,id:scene.id,branch:['연습에서 이어진 이야기','마음에서 이어진 이야기','쉼에서 이어진 이야기'][branch],chapter:arc?.chapter,recall:arc?.recall,title:arc?.title||expand(scene.title),text:(arc?.text?arc.text+' ':'')+expand(scene.text),choices};
 }

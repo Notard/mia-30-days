@@ -38,7 +38,7 @@ const nl=day>=7?"일주일 돌아보기":"다음날";
 body=`<h2>오늘의 기록</h2>${entries||`<div class="entry">오늘은 조용했어.</div>`}<button class="primary" data-action="next">${nl}</button>`;
 }else if(ev){
 const choices=(ev.choices||[]).map(c=>{const d=c.delta||{};const lack=money+num(d.money)<0||energy+num(d.energy)<0;return`<button class="choice" data-action="event" data-id="${esc(c.id)}" ${lack?"disabled":""}><strong>${esc(c.label)}</strong>${c.desc?`<small>${esc(c.desc)}</small>`:""}${s.day===5&&c.id==='a'?`<small>${s.goal==='home'?'신뢰':name(s.goal)} 24 또는 자립 30부터 더 순조로워요. 현재 ${s[s.goal==='home'?'trust':s.goal]} / 자립 ${s.independence}</small>`:''}${fxHtml(d)}</button>`;}).join("");
-body=`<div class="event"><span class="pill">${esc(ev.branch)}</span><h2>${esc(ev.title)}</h2><p>${esc(ev.text)}</p>${ev.condition?`<p class="notice">${name(ev.condition.stat)} ${ev.condition.value} · ${ev.condition.mode==='below'?`${ev.condition.threshold} 미만이라 쉬어 가는 이야기`:`${ev.condition.threshold}부터 만나는 이야기`}</p>`:''}<div class="choices">${choices}</div></div>`;
+body=`<div class="event"><div class="story-tags">${ev.chapter?`<span class="story-chapter">${esc(ev.chapter)}</span>`:''}<span class="pill">${esc(ev.branch)}</span></div><h2>${esc(ev.title)}</h2>${ev.recall?`<p class="story-recall">↳ ${esc(ev.recall)}</p>`:''}<p>${esc(ev.text)}</p>${ev.condition?`<p class="notice">${name(ev.condition.stat)} ${ev.condition.value} · ${ev.condition.mode==='below'?`${ev.condition.threshold} 미만이라 쉬어 가는 이야기`:`${ev.condition.threshold}부터 만나는 이야기`}</p>`:''}<div class="choices">${choices}</div></div>`;
 }else{
 const slot=s.slot===1?"오후":"오전";
 const warn=energy<25||s.morale<25?`<div class="warning">${energy<25?'기운':'기분'}이 낮아 배움의 성장이 절반이에요. 휴식이나 대화로 돌봐 주세요.</div>`:"";
