@@ -2,6 +2,8 @@
 
 용세권의 미아와 한강이 내려다보이는 펜트하우스에서 일주일을 보내는 선택형 웹게임입니다. 그림전·식탁·탐험·우리집 중 목표를 고르고, 하루 두 번의 활동과 사건 선택을 통해 미아의 성장과 엔딩을 바꿀 수 있습니다.
 
+『작고 쓸모 있는 코딩 딴짓』에 소개한 방법을 바탕으로 저자가 직접 만든 게임입니다. 책은 [예스24](https://www.yes24.com/product/goods/197774521), [교보문고](https://product.kyobobook.co.kr/detail/S000221582195), [알라딘](https://www.aladin.co.kr/shop/wproduct.aspx?ItemId=403862833)에서 볼 수 있습니다. [카미아엘 뮤직 유튜브](https://www.youtube.com/@CamiaelMusic)에도 들러 주세요.
+
 ## 플레이
 
 [브라우저에서 게임하기](https://notard.github.io/mia-30-days/)

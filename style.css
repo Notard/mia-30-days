@@ -40,3 +40,10 @@
 .effect-hint b{font-size:15px;letter-spacing:-2px;margin-left:2px;color:#557451}
 .effect-hint.down b{color:#ac6970}
 @media(max-width:480px){.activities .activity{min-height:110px}.effect-hints{gap:6px 9px;font-size:11px}}
+
+.book-promo{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-top:20px;padding:24px 28px;background:linear-gradient(115deg,#fff9f1,#f8eae7)}
+.book-promo-copy{max-width:520px}.book-promo-copy h2{font-size:clamp(19px,2vw,25px);margin-bottom:6px}.book-promo-copy p{font-size:13px;color:#6e5c54}
+.book-promo-links{display:grid;gap:8px;justify-items:end}.book-promo-stores{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.book-promo a{display:inline-block;border:1px solid #e3cfc8;border-radius:10px;background:#fffaf6;padding:8px 11px;color:#784c5b;text-decoration:none;font-size:12px;font-weight:700;white-space:nowrap;transition:background .15s,transform .15s}
+.book-promo a:hover{background:#f8e1e4;transform:translateY(-1px)}.book-promo a:focus-visible{outline:3px solid #b8677e;outline-offset:3px}.book-promo-youtube{color:#a03950!important}
+@media(max-width:700px){.book-promo{align-items:stretch;flex-direction:column;padding:20px}.book-promo-links{justify-items:start}.book-promo-stores{justify-content:flex-start}}
