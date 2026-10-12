@@ -2,6 +2,7 @@ import {rollActivityResult,resultGrades,resultDescription} from './activity-resu
 import {advancedActivities,growthDialogue} from './progression.js';
 import {statKeys,statNames,activityDelta,upgradeState,statValue} from './growth.js';
 import {reactionFor} from "./dialogue.js";
+import {resultLineFor} from './dialogue-situations.js';
 import {startProfiles} from './start-profiles.js';
 
 export const activities = [
@@ -55,7 +56,7 @@ export function applyActivity(s, id, random=Math.random) {
   for (const k of statKeys) if (delta[k]) parts.push(`${statNames[k]} ${delta[k]>0?'+':''}${delta[k]}`);
   let reply=reactionFor({...n,slot:n.slot+1,history:[...n.history,{day:n.day,activityId:id}]},id);
   const growth=growthDialogue(n,id);
-  if(result.grade==='failure'||result.grade==='disaster'){const group={observe:'sketch',meal:'chores',explore:'walk',stroll:'walk',wishbook:'talk'}[id]||id;reply=id==='meal'?'접은 수건이 자꾸 풀리네. 손이 피곤해서 다음에는 쉬고 싶어.':group==='talk'?'실수할까 봐 두려워. 그래도 말해 볼래.':reactionFor({...n,energy:0,health:60,morale:60,trust:0,history:[]},group);}
+  reply=resultLineFor(id,result.grade)||reply;
 
   const mood=['failure','disaster','great_success'].includes(result.grade)?resultGrades[result.grade].mood:growth?.mood||(id==='rest'?'tired':n.energy<25?'tired':id==='talk'&&n.trust<50?'shy':n.trust>=50?'happy':'curious');
   n.history.push({ activityId:id,reply,mood,result, day: n.day, slot: n.slot, title: a.name, text: `${id==='rest'?'회복':resultGrades[result.grade].label} · ${a.desc} ${parts.join(', ')} 미아: “${reply}”`, delta });

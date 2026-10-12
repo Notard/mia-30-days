@@ -1,4 +1,5 @@
 import {advancedActivities,growthDialogue} from './progression.js';
+import {daySituation,morningLines,nightLines} from './dialogue-situations.js';
 export const lines = {
   rest: {
     normal: [
@@ -286,12 +287,18 @@ export function reactionFor(s, id) {
 export function dialogueFor(s) {
   const hist = s.history || [];
   const latest = hist[hist.length - 1];
+  if(s.phase==='night'){
+    const kind=daySituation(s,true);
+    if(kind)return {text:nightLines[kind],mood:kind==='disaster'||kind==='failure'?'sad':kind==='rested'?'tired':'happy'};
+  }
   if (latest && latest.day === s.day && latest.reply) {
     return { text: latest.reply, mood: latest.mood || (s.energy < 25 ? 'tired' : s.trust >= 50 ? 'happy' : 'curious') };
   }
   if (s.phase === 'night' || s.phase === 'end') {
     return { text: nights[s.day - 1], mood: 'tired' };
   }
+  const morning=daySituation(s);
+  if(morning)return {text:morningLines[morning],mood:morning==='disaster'||morning==='failure'?'sad':morning==='tired'?'tired':'happy'};
   const growth=growthDialogue(s);if(growth)return growth;
   const g = greetings[s.goal] || greetings.home;
   return { text: g[(s.day - 1) % 3], mood: s.energy < 25 ? 'tired' : s.trust >= 50 ? 'happy' : 'curious' };
