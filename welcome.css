@@ -13,3 +13,5 @@
 .paper-doll .paper-head{position:absolute;left:27.52%;top:8.9231%;width:55.896%;height:29.2308%;background-image:url('assets/wardrobe/mia-head-chin-v01.png');background-repeat:no-repeat;background-size:139.3333% 104.9372%;background-position:49.1525% 69.4915%;pointer-events:none}
 
 .purchase-dialog{max-width:400px}.purchase-dialog h2{font-size:21px}.purchase-amounts{margin:20px 0}.purchase-amounts>div{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #ead8cc}.purchase-amounts dd{margin:0;font-weight:700}.purchase-short{color:#b64b62}.purchase-status{font-size:14px;margin-bottom:20px}.purchase-dialog::backdrop{background:#251e2899}
+
+.duration-picker{display:flex;gap:10px;margin:18px 0}.duration-picker [aria-pressed=true]{background:#e7efdf;border-color:#9fb188}.calendar-caption{font-size:12px;color:#86695e;margin:10px 0}.work-cost{display:block;margin-top:9px;font-size:11px}

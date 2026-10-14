@@ -1,3 +1,4 @@
+import {workActivities} from './work.js?v=month7';
 // Every activity owns new drawn result poses: joy, calm completion, mistake, slump.
 export const resultSprites=Object.fromEntries(['sketch','atelier','cook','meal','chores','talk','wishbook','observe','walk','picnic','explore','stroll'].map(id=>[id,{file:`mia-result-${id}-v01.png`,columns:4,rows:2,zoom:.88,frames:{great_success:[0,1],success:[2,3],failure:[4,5],disaster:[6,7]}}]));
 export function resultSample(elapsed,clip,grade,{revealed=false,reduced=false}={}){
@@ -6,3 +7,5 @@ export function resultSample(elapsed,clip,grade,{revealed=false,reduced=false}={
  return {frame,phase:(revealed||reduced||elapsed>=1800)?'complete':'result',contact:false};
 }
 export const resultDuration=(id,clip)=>clip.duration+(resultSprites[id]?1200:0);
+
+for(const a of workActivities)resultSprites[a.id]=resultSprites[a.sprite];

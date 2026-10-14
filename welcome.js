@@ -1,6 +1,6 @@
 const plans={
- art:{name:'작은 그림전',icon:'🎨',themes:['물빛 그림전','우리 식구 그림전'],labels:['그림 주제 고르기','걸어 둘 작품 완성하기','전시 자리와 초대 준비하기'],main:['sketch','atelier','observe'],support:['walk','talk','wishbook'],recommend:'스케치북 그리기',object:'완성한 그림',alternative:'찢어진 모서리를 살린 콜라주'},
- cook:{name:'따뜻한 식탁',icon:'🍲',themes:['따뜻한 수프 식탁','작은 간식 식탁'],labels:['메뉴 정하기','함께 먹을 음식 준비하기','식탁과 초대 준비하기'],main:['cook','meal'],support:['chores','talk'],recommend:'간단한 요리',object:'준비한 음식',alternative:'남은 재료로 만든 작은 간식'},
+ art:{name:'작은 그림전',icon:'🎨',themes:['물빛 그림전','우리 식구 그림전'],labels:['그림 주제 고르기','걸어 둘 작품 완성하기','전시 자리와 초대 준비하기'],main:['sketch','atelier','observe','postcards','art-sale','commission'],support:['walk','talk','wishbook'],recommend:'스케치북 그리기',object:'완성한 그림',alternative:'찢어진 모서리를 살린 콜라주'},
+ cook:{name:'따뜻한 식탁',icon:'🍲',themes:['따뜻한 수프 식탁','작은 간식 식탁'],labels:['메뉴 정하기','함께 먹을 음식 준비하기','식탁과 초대 준비하기'],main:['cook','meal','food-sale'],support:['chores','talk'],recommend:'간단한 요리',object:'준비한 음식',alternative:'남은 재료로 만든 작은 간식'},
  courage:{name:'한강 환영 나들이',icon:'🌿',themes:['강물이 보이는 길','나무 그늘 탐험길'],labels:['나들이 길 고르기','경로를 돌아보고 지도 완성하기','돗자리와 초대 준비하기'],main:['walk','picnic','explore','stroll'],support:['talk','sketch'],recommend:'공원 산책',object:'직접 만든 경로 지도',alternative:'쉬는 자리를 더한 짧은 경로'},
  home:{name:'편안한 환영 자리',icon:'🧸',themes:['창가 이야기 자리','거실 작은 놀이 자리'],labels:['함께할 놀이 고르기','편안한 자리와 놀이 준비하기','자리 배치와 초대 준비하기'],main:['talk','wishbook','chores'],support:['rest','sketch','cook'],recommend:'마음 나누기',object:'직접 꾸민 자리',alternative:'부담 없이 쉬며 이야기하는 자리'},
 };

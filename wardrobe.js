@@ -1,4 +1,4 @@
-import {validParts,partsFor} from './wardrobe-parts.js?v=shop6';
+import {validParts,partsFor} from './wardrobe-parts.js?v=month7';
 export const shopItems=[
  {id:'indoor-lilac',category:'indoor',name:'라일락 실내복',price:20,icon:'👕',note:'실내에서 입는 포근한 새 옷',cell:2},
  {id:'outdoor-sage',category:'outdoor',name:'세이지 외출복',price:24,icon:'🧥',note:'산책과 나들이에 입는 새 옷',cell:6},
@@ -33,7 +33,7 @@ export function equipClothing(s,category,id){
  if(s.phase!=='schedule'||!categories[category]?.includes(id)||!w.owned.includes(id)||w[category]===id&&w.parts?.enabled===false)return s;
  const n=structuredClone(s);n.wardrobe=structuredClone(w);n.wardrobe[category]=id;n.wardrobe.parts={...partsFor(n),enabled:false};const shoePart=({slippers:'part-slippers',sneakers:'part-sneakers'})[id];if(shoePart&&!n.wardrobe.parts.owned.includes(shoePart))n.wardrobe.parts.owned.push(shoePart);n.notice='옷을 갈아입었어요. 실내와 야외에 맞는 옷을 챙겨요.';return n;
 }
-export const outdoorActivities=['walk','picnic','explore','stroll'];
+export const outdoorActivities=['walk','picnic','explore','stroll','errand'];
 export function wardrobeCell(s,outdoor=false){
  const w=wardrobeFor(s);
  const item=shopItems.find(item=>item.id===w[outdoor?'outdoor':'indoor']);

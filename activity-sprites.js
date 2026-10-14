@@ -1,4 +1,5 @@
-import {advancedActivities} from './progression.js';
+import {workActivities} from './work.js?v=month7';
+import {advancedActivities} from './progression.js?v=month7';
 export const activitySprites={
  sketch:{file:'mia-drawing-v02.png',label:'미아가 책상에서 연필로 그림을 그리는 모습',duration:4200,columns:4,rows:2,base:0,mask:'drawing',prepare:[0,1],loop:[2,3,4,3],finish:[6,7],contact:[1,2,3,4]},
  atelier:{file:'mia-drawing-v02.png',label:'미아가 연습한 색으로 작품을 그리는 모습',duration:4800,columns:4,rows:2,base:0,mask:'drawing',prepare:[0,1],loop:[2,3,4,3],finish:[5,6,7],contact:[1,2,3,4]},
@@ -16,4 +17,5 @@ Object.assign(activitySprites,{
  stroll:{file:'mia-stroll-v01.png',label:'미아가 발을 딛고 팔과 몸을 천천히 늘려 몸을 푸는 모습',duration:4800,outdoor:true,columns:4,rows:2,base:0,zoom:.88,mask:'stretching',prepare:[0,1],loop:[2,3,4,5,4,3,2],finish:[6,7],contact:[],frameMs:440},
  wishbook:{file:'mia-wishbook-v01.png',label:'미아가 소원 수첩을 펼쳐 가리키고 상대에게 보여주는 모습',duration:4600,columns:4,rows:2,base:0,zoom:.88,mask:'notebook',prepare:[0,1],loop:[2,3,4,5,4,3],finish:[6,7],contact:[1,2,3,4,5,6],frameMs:380}
 });
+for(const a of workActivities)activitySprites[a.id]={...activitySprites[a.sprite],label:a.name+' 활동을 준비하는 미아'};
 export function spriteMarkup(id){const c=activitySprites[id];return c?`<div class="activity-sprite" data-clip="${id}" data-mask="${c.mask||'still'}" style="--activity-sheet:url('assets/activity/${c.file}');--sheet-size:${(c.columns||2)*100}% ${(c.rows||2)*100}%" role="img" aria-label="${c.label}"><span class="activity-base" aria-hidden="true"></span><span class="activity-frame" aria-hidden="true"></span><span class="activity-effect" aria-hidden="true"></span><span class="activity-result-effect" aria-hidden="true"></span></div>`:'';}

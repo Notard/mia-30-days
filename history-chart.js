@@ -1,5 +1,5 @@
-import {statNames} from './growth.js';
-import {resultGrades} from './activity-results.js';
+import {statNames} from './growth.js?v=month7';
+import {resultGrades} from './activity-results.js?v=month7';
 
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 

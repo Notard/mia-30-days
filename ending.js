@@ -1,7 +1,8 @@
-import {growthProfile,statValue} from './growth.js';
-import {balancedScene,endingScenes} from './ending-scenes.js';
-import {storyEpilogueFor} from './story-arcs.js';
-import {welcomeProject,celebrationFor} from './welcome.js';
+import {monthConclusion} from './work.js?v=month7';
+import {growthProfile,statValue} from './growth.js?v=month7';
+import {balancedScene,endingScenes} from './ending-scenes.js?v=month7';
+import {storyEpilogueFor} from './story-arcs.js?v=month7';
+import {welcomeProject,celebrationFor} from './welcome.js?v=month7';
 
 const titles={art:'작은 그림전',cook:'함께 만든 식탁',courage:'한강의 작은 탐험',home:'편안한 우리집'};
 const paths={balanced:'여러 경험이 모인 날',self:'스스로 준비한 날',open:'함께 연 작은 모임',quiet:'가까이 나눈 하루',rest:'쉬어 가는 마무리',lesson:'함께 고르는 연습',learning:'마음을 알아가는 중',novice:'다음 소원을 찾은 날'};
@@ -37,5 +38,7 @@ export function endingFor(s){
  if(statValue(s,'morale')>=80)achievements.push('마음이 편안한 일주일');
  const id=path==='open'||path==='quiet'?`${goal}-full-${path}`:`${goal}-${path}`;
  const epilogue=storyEpilogueFor(s);
- return {growth,id,goal,path,reached:full,celebration:celebrationFor(s),badge:paths[path],title:`${titles[goal]} — ${scene.title}`,text:scene.text+(epilogue?' '+epilogue:''),grade,achievements};
+ const result={growth,id,goal,path,reached:full,celebration:celebrationFor(s),badge:paths[path],title:`${titles[goal]} — ${scene.title}`,text:scene.text+(epilogue?' '+epilogue:''),grade,achievements};
+ if(s.duration===30){const month=monthConclusion(s);return {...result,...month,achievements:[...achievements,...month.extraAchievements]};}
+ return result;
 }

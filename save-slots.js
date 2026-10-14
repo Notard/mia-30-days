@@ -1,8 +1,8 @@
-import {upgradeState} from './growth.js';
-import {validateState} from './engine.js';
+import {upgradeState} from './growth.js?v=month7';
+import {validateState} from './engine.js?v=month7';
 export const AUTO_KEY='mia-week-v2',MANUAL_KEY='mia-week-manual-v1';
 export function decodeSave(raw){
- if(typeof raw!=='string'||raw.length>100000)return null;
+ if(typeof raw!=='string'||raw.length>300000)return null;
  try{const data=JSON.parse(raw),state=data?.format==='mia-save-v1'?data.state:data;
  if(!validateState(state))return null;
  return {state:upgradeState(state),savedAt:typeof data.savedAt==='string'&&Number.isFinite(Date.parse(data.savedAt))?data.savedAt:null};

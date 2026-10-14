@@ -1,4 +1,5 @@
-import {statValue,growthProfile} from './growth.js';
+import {workActivities} from './work.js?v=month7';
+import {statValue,growthProfile} from './growth.js?v=month7';
 export const advancedActivities=[
  {id:'observe',name:'빛과 여백 관찰하기',icon:'🔎',desc:'집중해서 창가의 색과 비워 둘 자리를 골라 그림에 담아요.',cost:7,energy:17,gains:{art:11},need:{stat:'focus',value:25},sprite:'sketch',caption:'창밖의 빛을 살피며 여백을 남겨 그려요.'},
  {id:'explore',name:'미아가 고른 탐색길',icon:'🗺️',desc:'미아가 지도를 보고 익숙한 길과 다른 길을 비교하며 걸어요.',cost:6,energy:22,gains:{courage:12},need:{stat:'curiosity',value:25},sprite:'walk',caption:'지도를 짚고 미아가 고른 탐색 방향을 함께 살펴요.'},
@@ -6,7 +7,7 @@ export const advancedActivities=[
  {id:'stroll',name:'강변에서 가볍게 몸풀기',icon:'🌿',desc:'발을 딛고 팔을 가볍게 늘리며 몸과 마음을 돌봐요.',cost:2,energy:10,gains:{courage:4},need:{stat:'health',value:75},sprite:'walk',caption:'강변에서 발을 딛고 팔과 몸을 천천히 늘려요.'},
  {id:'wishbook',name:'소원 수첩 나누기',icon:'📓',desc:'좋아하는 일과 다음에 해보고 싶은 일을 미아가 먼저 골라요.',cost:0,energy:10,gains:{trust:10},need:{stat:'morale',value:75},sprite:'talk',caption:'미아의 다음 소원을 듣고 함께 고를 시간을 가져요.'}
 ];
-export const unlocks=[{id:'art',name:'작업실에서 큰 그림',stat:'art',value:18},{id:'courage',name:'한강 피크닉',stat:'courage',value:18},...advancedActivities.map(a=>({id:a.id,name:a.name,...a.need}))];
+export const unlocks=[{id:'art',name:'작업실에서 큰 그림',stat:'art',value:18},{id:'courage',name:'한강 피크닉',stat:'courage',value:18},...advancedActivities.map(a=>({id:a.id,name:a.name,...a.need})),...workActivities.filter(a=>a.need).map(a=>({id:a.id,name:a.name,...a.need}))];
 export const traitReplies={
  'health-low':['몸이 무거워. 다음 휴식은 꼭 이 자리에서 하고 싶어.','눈을 감고 싶은 날도 내가 고르는 날이지? 오늘은 조금 더 쉴래.'],
  'morale-low':['실수할까 봐 두려워. 그래도 말해 볼래.','잠깐 멈추는 걸 고를래. 움직이지 않아도 괜찮아.'],

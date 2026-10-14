@@ -1,10 +1,11 @@
-import {rollActivityResult,resultGrades,resultDescription} from './activity-results.js';
-import {advancedActivities,growthDialogue} from './progression.js';
-import {statKeys,statNames,activityDelta,upgradeState,statValue} from './growth.js';
-import {reactionFor} from "./dialogue.js";
-import {resultLineFor} from './dialogue-situations.js';
-import {startProfiles} from './start-profiles.js';
-import {wardrobeDefaults} from './wardrobe.js';
+import {workActivities,workReply} from './work.js?v=month7';
+import {rollActivityResult,resultGrades,resultDescription} from './activity-results.js?v=month7';
+import {advancedActivities,growthDialogue} from './progression.js?v=month7';
+import {statKeys,statNames,activityDelta,upgradeState,statValue} from './growth.js?v=month7';
+import {reactionFor} from "./dialogue.js?v=month7";
+import {resultLineFor} from './dialogue-situations.js?v=month7';
+import {startProfiles} from './start-profiles.js?v=month7';
+import {wardrobeDefaults} from './wardrobe.js?v=month7';
 
 export const activities = [
   { id: 'rest', name: '은휘 안에서 쉬기', icon: '🧸', desc: '미아가 은휘 인형 안에서 기운을 회복해요.', cost: 0, energy: -24, gains: {} },
@@ -16,9 +17,10 @@ export const activities = [
   { id: 'atelier', name: '작업실에서 큰 그림', icon: '🖌️', desc: '연습한 색을 한 장의 작품으로 엮어 봐요.', cost: 12, energy: 22, gains: { art: 15 }, need: { stat: 'art', value: 18 } },
   { id: 'picnic', name: '한강 피크닉', icon: '🧺', desc: '미아가 직접 고른 자리에서 작은 나들이를 해요.', cost: 10, energy: 24, gains: { courage: 15 }, need: { stat: 'courage', value: 18 } },
   ...advancedActivities,
+  ...workActivities,
 ];
 
-export function newGame(goal) {
+export function newGame(goal,duration=7) {
   const g = Object.hasOwn(startProfiles,goal) ? goal : 'art';
   const state = {
     version: 3, welcomeVersion:1, wardrobe:wardrobeDefaults(), day: 1, slot: 0, phase: 'schedule', goal: g,
@@ -27,6 +29,7 @@ export function newGame(goal) {
     history: [], counts: {}, flags: {},
     notice: '7일 뒤 돌아오는 식구들을 위해, 미아와 환영회를 준비해요.', eventChoice: null,
   };
+  if(duration===30)state.duration=30;
   for(const [stat,bonus] of Object.entries(startProfiles[g].bonus))state[stat]+=bonus;
   return state;
 }
@@ -55,7 +58,7 @@ export function applyActivity(s, id, random=Math.random) {
   if (delta.money) parts.push(`돈 ${delta.money}`);
   if (delta.energy) parts.push(`체력 ${delta.energy}`);
   for (const k of statKeys) if (delta[k]) parts.push(`${statNames[k]} ${delta[k]>0?'+':''}${delta[k]}`);
-  let reply=reactionFor({...n,slot:n.slot+1,history:[...n.history,{day:n.day,activityId:id}]},id);
+  let reply=workReply(n,id,result.grade)||reactionFor({...n,slot:n.slot+1,history:[...n.history,{day:n.day,activityId:id}]},id);
   const growth=growthDialogue(n,id);
   reply=resultLineFor(id,result.grade)||reply;
 

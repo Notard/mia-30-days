@@ -1,4 +1,6 @@
-import {wardrobeBenefit} from './wardrobe.js';
+import {moneyLimit} from './calendar.js?v=month7';
+import {workIncome} from './work.js?v=month7';
+import {wardrobeBenefit} from './wardrobe.js?v=month7';
 export const growthDefaults={health:60,morale:60,focus:5,curiosity:5,independence:5};
 export const skillKeys=['art','cook','courage','trust'];
 export const growthKeys=Object.keys(growthDefaults);
@@ -31,7 +33,8 @@ export function activityDelta(s,a,grade='success'){
   if(grade==='failure'||grade==='disaster'){delta.energy-=(grade==='failure'?2:5);delta.morale=Math.min(delta.morale||0,grade==='failure'?-4:-9);if(grade==='disaster')delta.health=Math.min(delta.health||0,-3);}
   else delta.morale=(delta.morale||0)+3;
  }
- return Object.fromEntries(Object.entries(delta).map(([k,v])=>[k,cap(statValue(s,k)+v,k==='money'?200:100)-statValue(s,k)]));
+ if(a.income)delta.money=workIncome(s,a,grade)-a.cost;
+ return Object.fromEntries(Object.entries(delta).map(([k,v])=>[k,cap(statValue(s,k)+v,k==='money'?moneyLimit(s):100)-statValue(s,k)]));
 }
 export function eventGrowth(s,c){
  const d={...c.delta};

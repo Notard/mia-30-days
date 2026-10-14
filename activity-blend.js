@@ -1,6 +1,6 @@
-import {resultSprites,resultSample} from './result-sprites.js';
-import {resultRegistrations,resultRatios} from './result-registrations.js';
-import {activitySprites} from './activity-sprites.js';
+import {resultSprites,resultSample} from './result-sprites.js?v=month7';
+import {resultRegistrations,resultRatios} from './result-registrations.js?v=month7';
+import {activitySprites} from './activity-sprites.js?v=month7';
 // Registered cells replace each other: never dissolve two hands together.
 export function activitySample(elapsed,clip,{revealed=false,reduced=false,tired=false}={}){
  if(!clip.prepare)return {frame:0,phase:'still',contact:false};

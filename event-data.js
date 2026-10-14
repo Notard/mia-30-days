@@ -1,9 +1,10 @@
-import {growthEventFor} from './growth-events.js';
-import {eventGrowth,statValue} from './growth.js';
-import {stories} from "./story-data.js";
-import {storyArcFor} from './story-arcs.js';
-import {welcomeEventFor} from './welcome.js';
-export function eventFor(s){return welcomeEventFor(s,baseEventFor(s));}
+import {monthEventFor} from './month-story.js?v=month7';
+import {growthEventFor} from './growth-events.js?v=month7';
+import {eventGrowth,statValue} from './growth.js?v=month7';
+import {stories} from "./story-data.js?v=month7";
+import {storyArcFor} from './story-arcs.js?v=month7';
+import {welcomeEventFor} from './welcome.js?v=month7';
+export function eventFor(s){return s.duration===30&&s.day>7?monthEventFor(s):welcomeEventFor(s,baseEventFor(s));}
 function baseEventFor(s){
   const arc=storyArcFor(s);
   const growth=growthEventFor(s);if(growth)return {...growth,chapter:arc?.chapter,recall:arc?.recall};

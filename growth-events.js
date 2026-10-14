@@ -1,5 +1,5 @@
-import {statValue} from './growth.js';
-import {traitReplies} from './progression.js';
+import {statValue} from './growth.js?v=month7';
+import {traitReplies} from './progression.js?v=month7';
 export const growthStories={
  'health-low':{title:'덮어 둔 스케치북',text:'미아가 한강이 보이는 창가에 스케치북을 덮어 둬요. 손을 잠깐 쉬게 하고 오늘의 남은 일을 작게 나누려 해요.',a:'은휘 안에서 충분히 쉬기',b:'앉아서 준비물만 함께 정리하기'},
  'morale-low':{title:'지웠다 쓴 소원 한 줄',text:'미아가 수첩에 쓴 소원을 지우려다 멈춰요. 서두르지 않고 마음을 말할지, 작은 연습으로 다시 시작할지 함께 골라요.',a:'지우기 전에 마음부터 듣기',b:'작은 색 하나만 함께 고르기'},

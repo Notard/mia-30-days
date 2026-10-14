@@ -1,11 +1,13 @@
-import {resultSprites,resultDuration} from './result-sprites.js';
-import {resultGrades,resultDescription} from './activity-results.js';
-import {advancedActivities,unlocks} from './progression.js';
-import {activitySprites} from './activity-sprites.js';
-import {statNames,statValue} from './growth.js';
+import {workActivities} from './work.js?v=month7';
+import {resultSprites,resultDuration} from './result-sprites.js?v=month7';
+import {resultGrades,resultDescription} from './activity-results.js?v=month7';
+import {advancedActivities,unlocks} from './progression.js?v=month7';
+import {activitySprites} from './activity-sprites.js?v=month7';
+import {statNames,statValue} from './growth.js?v=month7';
 export {statNames};
 const performances={sketch:['✏️','연필로 창밖의 빛을 따라 그려요.'],atelier:['🖌️','연습한 색을 큰 그림에 담아요.'],cook:['🍳','천천히 저으며 맛을 살펴요.'],chores:['🧹','작은 자리부터 차근차근 정리해요.'],walk:['👣','한강 길을 따라 천천히 걸어요.'],picnic:['🧺','한강에서 고른 간식을 함께 먹어요.'],talk:['💬','서로의 이야기에 귀를 기울여요.'],rest:['🧸','은휘 안에서 편안히 숨을 고르고 있어요.']};
 for(const a of advancedActivities)performances[a.id]=[a.icon,a.caption];
+for(const a of workActivities)performances[a.id]=[a.icon,a.desc];
 export function outcomeFor(before,after,id){
  if(before===after)return null;
  const entry=after.history.at(-1),performance=performances[id]||['💌','미아가 선택에 담긴 마음을 받아들여요.'];

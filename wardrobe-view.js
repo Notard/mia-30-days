@@ -1,5 +1,5 @@
-import {partsDialog} from './wardrobe-parts.js?v=shop6';
-import {shopItems,wardrobeFor,wardrobeCell,clothingName} from './wardrobe.js';
+import {partsDialog} from './wardrobe-parts.js?v=month7';
+import {shopItems,wardrobeFor,wardrobeCell,clothingName} from './wardrobe.js?v=month7';
 const defaults=[{id:'indoor-original',category:'indoor',name:'분홍 실내복',cell:0},{id:'outdoor-original',category:'outdoor',name:'가을 외출복',cell:4},{id:'socks',category:'indoorShoes',name:'아이보리 양말',cell:0},{id:'maryjanes',category:'outdoorShoes',name:'의상 기본 신발',cell:4}];
 const names={indoor:'실내복',outdoor:'외출복',indoorShoes:'실내용 신발',outdoorShoes:'외출용 신발'};
 export const avatarStyle=frame=>{if(typeof frame==='object'&&['spring','summer','autumn','winter'].includes(frame?.season))return `--wardrobe-image:url('assets/wardrobe/mia-${frame.season}-v01.png');--wardrobe-size:400% 100%;--wardrobe-x:${frame.cell*100/3}%;--wardrobe-y:0%`;const cell=Number.isInteger(frame)?frame:0;return `--wardrobe-x:${(cell%4)*100/3}%;--wardrobe-y:${cell>=4?100:0}%`;};
