@@ -2,7 +2,7 @@ import {updateOpeningSpeech,stopOpeningSpeech,startOpeningText} from './opening-
 import {setMusicDucked} from './music.js?v=month7';
 // Offline dubbed clips only. No TTS server or AI connection during play.
 let enabled=false,audio=null,frame=0,scene=null,text='',speaker='미아',revision=0,latest='',timer=0;
-const bank=fetch('assets/audio/manifest.json').then(r=>{if(!r.ok)throw Error('voice manifest');return r.json();}).catch(()=>({}));
+const bank=fetch('assets/audio/manifest.json?v=voice5').then(r=>{if(!r.ok)throw Error('voice manifest');return r.json();}).catch(()=>({}));
 const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
 export function voiceEnabled(){return enabled;}
 export function stopSpeech(){
