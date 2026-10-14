@@ -1,4 +1,4 @@
-import {partsDialog} from './wardrobe-parts.js?v=head4';
+import {partsDialog} from './wardrobe-parts.js?v=joined5';
 import {shopItems,wardrobeFor,wardrobeCell,clothingName} from './wardrobe.js';
 const defaults=[{id:'indoor-original',category:'indoor',name:'분홍 실내복',cell:0},{id:'outdoor-original',category:'outdoor',name:'가을 외출복',cell:4},{id:'socks',category:'indoorShoes',name:'아이보리 양말',cell:0},{id:'maryjanes',category:'outdoorShoes',name:'의상 기본 신발',cell:4}];
 const names={indoor:'실내복',outdoor:'외출복',indoorShoes:'실내용 신발',outdoorShoes:'외출용 신발'};

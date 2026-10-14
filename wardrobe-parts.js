@@ -42,21 +42,32 @@ export const partRegistration=[
  [256,685,256,400,32,308,206,280],
  [512,685,256,270,32,308,206,206],
  [768,685,256,270,32,308,206,206],
- [0,1380,256,130,66,576,159,68],
- [256,1380,256,130,66,576,159,68],
- [512,1130,256,280,80,179,173,257],
- [768,1130,256,280,80,179,173,257],
+ [0,1380,256,130,39.9,562,183.1,75],
+ [256,1380,256,130,43.19,562,189.405,75],
+ [512,1130,256,280,75,179,140,257],
+ [768,1130,256,280,75,179,140,257],
 ];
-export function partLayer(cell,clip=''){
- const [x,y,w,h,dx,dy,dw,dh]=partRegistration[cell];
- return `<span class="paper-layer" style="${clip}left:${dx/256*100}%;top:${dy/650*100}%;width:${dw/256*100}%;height:${dh/650*100}%;background-size:${1024/w*100}% ${1536/h*100}%;background-position:${x/(1024-w)*100}% ${y/(1536-h)*100}%" aria-hidden="true"></span>`;
+// Upper parts contain neck, sleeves, arms and hands; lower parts contain legs and feet.
+export const connectedRegistration={
+ 1:[0,190,256,335,49.84,162,184.32,241.2],
+ 2:[256,190,256,335,49.84,162,184.32,241.2],
+ 3:[512,190,256,335,49.84,162,184.32,241.2],
+ 4:[0,800,256,560,49.84,336,184.32,291.2],
+ 5:[256,800,256,560,49.84,336,184.32,291.2],
+ 6:[512,800,256,560,49.84,336,184.32,291.2],
+ 7:[768,800,256,560,49.84,336,184.32,291.2],
+};
+export function partLayer(cell){
+ const joined=connectedRegistration[cell];
+ const [x,y,w,h,dx,dy,dw,dh]=joined||partRegistration[cell];
+ return `<span class="paper-layer" data-body-part="${joined?(cell<4?'upper':'lower'):'accessory'}" style="${joined?"background-image:url('assets/wardrobe/mia-connected-parts-v01.png');":''}left:${dx/256*100}%;top:${dy/650*100}%;width:${dw/256*100}%;height:${dh/650*100}%;background-size:${1024/w*100}% ${1536/h*100}%;background-position:${x/(1024-w)*100}% ${y/(1536-h)*100}%" aria-hidden="true"></span>`;
 }
 export function assembledAvatar(s,outdoor=false,classes=''){
  const p=partsFor(s),stored=p[outdoor?'outdoor':'indoor'],look={...stored,top:stored.top==='none'?'top-rose':stored.top,bottom:stored.bottom==='none'?'bottom-cream':stored.bottom};
  const cells=['bottom','top','shoes','bag'].map(slot=>partItems.find(i=>i.id===look[slot])?.cell).filter(c=>c!==undefined);
  const label=Object.values(look).map(id=>partItems.find(i=>i.id===id)?.name).filter(Boolean).join(' · ')||'편안한 반팔 티와 반바지';
- const base=partLayer(0);
- return `<div class="wardrobe-avatar paper-doll ${classes}" role="img" aria-label="${label} 차림의 미아">${base}${cells.map(cell=>partLayer(cell)).join('')}<span class="paper-head" aria-hidden="true"></span></div>`;
+
+ return `<div class="wardrobe-avatar paper-doll ${classes}" role="img" aria-label="${label} 차림의 미아">${cells.map(cell=>partLayer(cell)).join('')}<span class="paper-head" aria-hidden="true"></span></div>`;
 }
 export function partsDialog(s,outdoor=false){
  const p=partsFor(s),place=outdoor?'outdoor':'indoor',stored=p[place],look={...stored,top:stored.top==='none'?'top-rose':stored.top,bottom:stored.bottom==='none'?'bottom-cream':stored.bottom};

@@ -1,4 +1,4 @@
-import {changePart,removePart} from './wardrobe-parts.js?v=head4';
+import {changePart,removePart} from './wardrobe-parts.js?v=joined5';
 import {statNames,statKeys} from './growth.js';
 import {AUTO_KEY,MANUAL_KEY,readSlot,encodeSave} from './save-slots.js';
 import {titleScreen,openingScreen,openingScenes,loadScreen} from './title-screen.js';
@@ -6,7 +6,7 @@ import {bookPromo} from './promo.js';
 import {mountActivityBlend} from './activity-blend.js';
 import {outcomeFor,mountOutcome} from './outcome.js';
 import {newGame,act,chooseEvent,nextDay,endingFor,validateState} from './engine.js';
-import {renderGame} from './render.js?v=head4';
+import {renderGame} from './render.js?v=joined5';
 import {historyEntry} from './history-chart.js';
 import {startProfiles} from './start-profiles.js';
 import {mountOpeningPerformance} from './opening-performance.js';
@@ -14,8 +14,8 @@ import {mountCharacterMotion} from './character-motion.js';
 import {stopSpeech,mountSpeech,voiceEnabled,toggleVoice,replaySpeech} from './speech.js';
 import {musicEnabled,toggleMusic,mountMusic} from './music.js';
 import {celebrationMarkup} from './welcome-view.js';
-import {buyClothing,equipClothing,shopItems} from './wardrobe.js?v=head4';
-import {wardrobeDialog} from './wardrobe-view.js?v=head4';
+import {buyClothing,equipClothing,shopItems} from './wardrobe.js?v=joined5';
+import {wardrobeDialog} from './wardrobe-view.js?v=joined5';
 const goals={
  art:{title:'작은 그림전',icon:'🎨',stat:'art',target:40,desc:'창밖의 빛을 그림으로 남기기. 연습을 쌓으면 작업실에서 큰 작품을 그릴 수 있어요.'},
  cook:{title:'함께 만든 식탁',icon:'🍲',stat:'cook',target:40,desc:'미아가 고른 음식을 함께 만들기. 요리와 집안일로 손에 익히고 재료비를 마련해요.'},
