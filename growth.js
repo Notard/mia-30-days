@@ -1,3 +1,4 @@
+import {wardrobeBenefit} from './wardrobe.js';
 export const growthDefaults={health:60,morale:60,focus:5,curiosity:5,independence:5};
 export const skillKeys=['art','cook','courage','trust'];
 export const growthKeys=Object.keys(growthDefaults);
@@ -17,6 +18,7 @@ export function upgradeState(s){
 }
 export function activityDelta(s,a,grade='success'){
  const delta={money:-a.cost,energy:-a.energy,...a.gains,...activityGrowth[a.id]};
+ delta.energy+=wardrobeBenefit(s,a.id);
  if(delta.art>0&&statValue(s,'focus')>=25)delta.art+=2;
  if(delta.cook>0&&statValue(s,'focus')>=25)delta.cook+=2;
  if(delta.courage>0&&statValue(s,'curiosity')>=25)delta.courage+=2;

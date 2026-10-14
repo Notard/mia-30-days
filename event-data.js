@@ -2,7 +2,9 @@ import {growthEventFor} from './growth-events.js';
 import {eventGrowth,statValue} from './growth.js';
 import {stories} from "./story-data.js";
 import {storyArcFor} from './story-arcs.js';
-export function eventFor(s){
+import {welcomeEventFor} from './welcome.js';
+export function eventFor(s){return welcomeEventFor(s,baseEventFor(s));}
+function baseEventFor(s){
   const arc=storyArcFor(s);
   const growth=growthEventFor(s);if(growth)return {...growth,chapter:arc?.chapter,recall:arc?.recall};
   const k = s.goal==='home' ? 'trust' : s.goal;

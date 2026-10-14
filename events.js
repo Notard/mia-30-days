@@ -10,7 +10,7 @@ export function chooseEvent(s,id){
   n[k]=Math.max(0,Math.min(k==='money'?200:100,n[k]+v));delta[k]=n[k]-statValue(s,k);
  }
  if(choice.flag)n.flags[choice.flag]=true;
- const mood=(choice.delta.trust||0)<0||n.day===4&&id==='b'?'sad':n.energy<25?'tired':choice.mood;
+ const mood=(choice.delta.trust||0)<0||n.day===4&&id==='b'&&event.id!=='welcome-setback'?'sad':n.energy<25?'tired':choice.mood;
  n.history.push({day:n.day,slot:2,title:event.title,text:choice.label+' — '+choice.desc+' 미아: “'+choice.reply+'”',delta,eventId:event.id,choiceId:id,reply:choice.reply,mood});
  n.eventChoice=id;n.notice=choice.desc;n.phase='night';return n;
 }

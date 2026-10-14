@@ -4,6 +4,7 @@ import {statKeys,statNames,activityDelta,upgradeState,statValue} from './growth.
 import {reactionFor} from "./dialogue.js";
 import {resultLineFor} from './dialogue-situations.js';
 import {startProfiles} from './start-profiles.js';
+import {wardrobeDefaults} from './wardrobe.js';
 
 export const activities = [
   { id: 'rest', name: '은휘 안에서 쉬기', icon: '🧸', desc: '미아가 은휘 인형 안에서 기운을 회복해요.', cost: 0, energy: -24, gains: {} },
@@ -20,11 +21,11 @@ export const activities = [
 export function newGame(goal) {
   const g = Object.hasOwn(startProfiles,goal) ? goal : 'art';
   const state = {
-    version: 3, day: 1, slot: 0, phase: 'schedule', goal: g,
+    version: 3, welcomeVersion:1, wardrobe:wardrobeDefaults(), day: 1, slot: 0, phase: 'schedule', goal: g,
     money: 70, energy: 70, art: 0, cook: 0, courage: 0, trust: 20,
     health:60,morale:60,focus:5,curiosity:5,independence:5,
     history: [], counts: {}, flags: {},
-    notice: '미아와 보낼 일주일을 계획해 주세요.', eventChoice: null,
+    notice: '7일 뒤 돌아오는 식구들을 위해, 미아와 환영회를 준비해요.', eventChoice: null,
   };
   for(const [stat,bonus] of Object.entries(startProfiles[g].bonus))state[stat]+=bonus;
   return state;

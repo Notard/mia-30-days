@@ -1,5 +1,6 @@
 import {advancedActivities} from './progression.js';
 import {growthKeys,statKeys} from './growth.js';
+import {validWardrobe} from './wardrobe.js';
 export {activities,availability,newGame,applyActivity as act} from './actions.js';
 export {eventFor,chooseEvent,nextDay} from './events.js';
 export {endingFor} from './ending.js';
@@ -9,6 +10,7 @@ const phases=['schedule','event','night','end'];
 const bounded=(v,max)=>Number.isInteger(v)&&v>=0&&v<=max;
 export function validateState(s){
   if(!s||typeof s!=='object'||![2,3].includes(s.version)||!goals.includes(s.goal)||!phases.includes(s.phase))return false;
+  if(s.welcomeVersion!==undefined&&s.welcomeVersion!==1||s.wardrobe!==undefined&&!validWardrobe(s.wardrobe))return false;
   if(!bounded(s.day,7)||s.day<1||!bounded(s.slot,2))return false;
   if(s.phase==='schedule'&&s.slot===2||s.phase!=='schedule'&&s.slot!==2||s.phase==='end'&&s.day!==7)return false;
   if(s.version===3&&!growthKeys.every(k=>bounded(s[k],100)))return false;

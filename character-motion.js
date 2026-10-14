@@ -7,7 +7,7 @@ export function mountCharacterMotion(root,previous){
  const expression=scene.dataset.expression||'neutral';
  scene.style.setProperty('--sprite',`url('assets/${sprites[expression]||sprites.neutral}')`);
  if(previous){scene.classList.add('is-update');scene.style.setProperty('--old-sprite',`url('assets/${sprites[previous]||sprites.neutral}')`);}
- for(const host of scene.querySelectorAll('.mia,.face')){
+ for(const host of scene.querySelectorAll('.mia:not(.wardrobe-avatar),.face')){
   const art=document.createElement('span');art.className='sprite-art';art.setAttribute('aria-hidden','true');
 
   if(previous&&previous!==expression){const old=document.createElement('span');old.className='expression-old';art.append(old);}
