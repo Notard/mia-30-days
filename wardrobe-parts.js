@@ -35,13 +35,13 @@ export function removePart(s,slot,place='indoor'){
 // Keeping these explicit prevents garments from jumping when switching items.
 export const partRegistration=[
  [0,0,256,650,0,0,256,650],
- [256,165,256,235,15,174,244,194],
+ [268,165,244,235,26.4375,174,232.5625,194],
  [512,165,256,235,15,174,244,194],
  [768,165,256,235,15,174,244,194],
- [0,685,256,400,35,318,200,270],
- [256,685,256,400,35,318,200,270],
- [512,685,256,270,35,318,200,198],
- [768,685,256,270,35,318,200,198],
+ [0,685,256,400,32,308,206,280],
+ [256,685,256,400,32,308,206,280],
+ [512,685,256,270,32,308,206,206],
+ [768,685,256,270,32,308,206,206],
  [0,1380,256,130,66,576,159,68],
  [256,1380,256,130,66,576,159,68],
  [512,1130,256,280,80,179,173,257],
@@ -55,14 +55,7 @@ export function assembledAvatar(s,outdoor=false,classes=''){
  const p=partsFor(s),look=p[outdoor?'outdoor':'indoor'];
  const cells=['bottom','top','shoes','bag'].map(slot=>partItems.find(i=>i.id===look[slot])?.cell).filter(c=>c!==undefined);
  const label=Object.values(look).map(id=>partItems.find(i=>i.id===id)?.name).filter(Boolean).join(' · ')||'편안한 반팔 티와 반바지';
- const coveredBottom=look.bottom!=='none';
- let base=coveredBottom?partLayer(0,'clip-path:polygon(0 0,100% 0,100% 50%,0 50%);')+partLayer(0,'clip-path:polygon(0 63.5%,100% 63.5%,100% 100%,0 100%);')+partLayer(0,'clip-path:polygon(0 50%,27% 50%,27% 63.5%,0 63.5%);')+partLayer(0,'clip-path:polygon(84% 50%,100% 50%,100% 63.5%,84% 63.5%);'):partLayer(0);
- if(look.top!=='none'){
-  // Hide the base T-shirt, keeping the head, hands and front braids visible.
-  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 650"><rect width="256" height="650" fill="white"/><rect x="60" y="192" width="165" height="135" fill="black"/><rect x="86" y="192" width="29" height="51" fill="white"/><rect x="165" y="192" width="30" height="51" fill="white"/></svg>';
-  const mask=`mask-image:url('data:image/svg+xml,${encodeURIComponent(svg)}');mask-mode:luminance;`;
-  base=base.replaceAll('style="',`style="${mask}`);
- }
+ const base=partLayer(0);
  return `<div class="wardrobe-avatar paper-doll ${classes}" role="img" aria-label="${label} 차림의 미아">${base}${cells.map(cell=>partLayer(cell)).join('')}</div>`;
 }
 export function partsDialog(s,outdoor=false){
