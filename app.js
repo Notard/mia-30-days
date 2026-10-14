@@ -1,3 +1,4 @@
+import {changePart,removePart} from './wardrobe-parts.js';
 import {statNames,statKeys} from './growth.js';
 import {AUTO_KEY,MANUAL_KEY,readSlot,encodeSave} from './save-slots.js';
 import {titleScreen,openingScreen,openingScenes,loadScreen} from './title-screen.js';
@@ -52,9 +53,10 @@ function render(){const previous=root.querySelector('.scene')?.dataset.expressio
 function beginWeek(){state=newGame(selected);screen='game';outcome=null;save();}
 root.addEventListener('click',e=>{const b=e.target.closest('button[data-action]');if(!b||b.disabled)return;const a=b.dataset.action,id=b.dataset.id;
  savedNotice='';
- if(a==='closet-open'&&state?.phase==='schedule'&&!outcome){closetMode='shop';closetOutdoor=false;}
+ if(a==='closet-open'&&state?.phase==='schedule'&&!outcome){closetMode='assemble';closetOutdoor=false;}
+ if(['part-buy','part-dress','part-remove'].includes(a)&&closetMode&&!outcome){const place=closetOutdoor?'outdoor':'indoor';const next=a==='part-remove'?removePart(state,id,place):changePart(state,id,place,a==='part-buy');if(next===state)return;state=next;save();}
  if(a==='closet-close')closetMode=null;
- if(a==='closet-tab')closetMode=id==='wardrobe'?'wardrobe':'shop';
+ if(a==='closet-tab')closetMode=['assemble','wardrobe','shop'].includes(id)?id:'assemble';
  if(a==='closet-preview')closetOutdoor=id==='outdoor';
  if(a==='closet-season'&&['all','basic','spring','summer','autumn','winter'].includes(id))closetSeason=id;
  if(['buy','dress'].includes(a)&&closetMode&&!outcome){const next=a==='buy'?buyClothing(state,id):equipClothing(state,b.dataset.category,id);if(next===state)return;state=next;if(a==='buy'){closetMode='wardrobe';closetOutdoor=['outdoor','outdoorShoes'].includes(shopItems.find(item=>item.id===id)?.category);}save();}

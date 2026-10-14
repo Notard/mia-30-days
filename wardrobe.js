@@ -1,3 +1,4 @@
+import {validParts,partsFor} from './wardrobe-parts.js';
 export const shopItems=[
  {id:'indoor-lilac',category:'indoor',name:'라일락 실내복',price:20,icon:'👕',note:'실내에서 입는 포근한 새 옷',cell:2},
  {id:'outdoor-sage',category:'outdoor',name:'세이지 외출복',price:24,icon:'🧥',note:'산책과 나들이에 입는 새 옷',cell:6},
@@ -18,19 +19,19 @@ export function wardrobeFor(s){return s.wardrobe||wardrobeDefaults();}
 export function validWardrobe(w){
  if(!w||typeof w!=='object'||Array.isArray(w)||!Array.isArray(w.owned)||w.owned.length>Object.values(categories).flat().length||new Set(w.owned).size!==w.owned.length)return false;
  const allowed=Object.values(categories).flat();
- return Object.keys(w).length===5&&w.owned.every(id=>allowed.includes(id))&&Object.entries(categories).every(([key,ids])=>ids.includes(w[key])&&w.owned.includes(w[key]));
+ return (Object.keys(w).length===(w.parts===undefined?5:6))&&(w.parts===undefined||validParts(w.parts))&&w.owned.every(id=>allowed.includes(id))&&Object.entries(categories).every(([key,ids])=>ids.includes(w[key])&&w.owned.includes(w[key]));
 }
 export function buyClothing(s,id){
  const item=shopItems.find(x=>x.id===id),w=wardrobeFor(s);
  if(s.phase!=='schedule'||!item||w.owned.includes(id)||s.money<item.price)return s;
- const n=structuredClone(s);n.wardrobe=structuredClone(w);n.money-=item.price;n.wardrobe.owned.push(id);n.wardrobe[item.category]=id;
+ const n=structuredClone(s);n.wardrobe=structuredClone(w);n.money-=item.price;n.wardrobe.owned.push(id);n.wardrobe[item.category]=id;n.wardrobe.parts={...partsFor(n),enabled:false};const shoePart=({slippers:'part-slippers',sneakers:'part-sneakers'})[id];if(shoePart&&!n.wardrobe.parts.owned.includes(shoePart))n.wardrobe.parts.owned.push(shoePart);
  n.morale=Math.min(100,(n.morale??60)+3);n.notice=item.name+'을 샀어요. 옷장에서 갈아입을 수 있어요.';
  return n;
 }
 export function equipClothing(s,category,id){
  const w=wardrobeFor(s);
- if(s.phase!=='schedule'||!categories[category]?.includes(id)||!w.owned.includes(id)||w[category]===id)return s;
- const n=structuredClone(s);n.wardrobe=structuredClone(w);n.wardrobe[category]=id;n.notice='옷을 갈아입었어요. 실내와 야외에 맞는 옷을 챙겨요.';return n;
+ if(s.phase!=='schedule'||!categories[category]?.includes(id)||!w.owned.includes(id)||w[category]===id&&w.parts?.enabled===false)return s;
+ const n=structuredClone(s);n.wardrobe=structuredClone(w);n.wardrobe[category]=id;n.wardrobe.parts={...partsFor(n),enabled:false};const shoePart=({slippers:'part-slippers',sneakers:'part-sneakers'})[id];if(shoePart&&!n.wardrobe.parts.owned.includes(shoePart))n.wardrobe.parts.owned.push(shoePart);n.notice='옷을 갈아입었어요. 실내와 야외에 맞는 옷을 챙겨요.';return n;
 }
 export const outdoorActivities=['walk','picnic','explore','stroll'];
 export function wardrobeCell(s,outdoor=false){
@@ -40,4 +41,4 @@ export function wardrobeCell(s,outdoor=false){
  return outdoor?(w.outdoor==='outdoor-sage'?6:4)+(w.outdoorShoes==='sneakers'?1:0):(w.indoor==='indoor-lilac'?2:0)+(w.indoorShoes==='slippers'?1:0);
 }
 export function clothingName(s,outdoor=false){const w=wardrobeFor(s),id=w[outdoor?'outdoor':'indoor'];return shopItems.find(item=>item.id===id)?.name||(outdoor?'가을 외출복':'분홍 실내복');}
-export function wardrobeBenefit(s,id){const w=wardrobeFor(s);return id==='rest'&&w.indoorShoes==='slippers'?3:outdoorActivities.includes(id)&&w.outdoorShoes==='sneakers'?2:0;}
+export function wardrobeBenefit(s,id){const w=wardrobeFor(s);if(w.parts?.enabled)return id==='rest'&&w.parts.indoor.shoes==='part-slippers'?3:outdoorActivities.includes(id)&&w.parts.outdoor.shoes==='part-sneakers'?2:0;return id==='rest'&&w.indoorShoes==='slippers'?3:outdoorActivities.includes(id)&&w.outdoorShoes==='sneakers'?2:0;}
