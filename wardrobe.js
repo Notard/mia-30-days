@@ -1,4 +1,4 @@
-import {validParts,partsFor} from './wardrobe-parts.js?v=fit3';
+import {validParts,partsFor} from './wardrobe-parts.js?v=head4';
 export const shopItems=[
  {id:'indoor-lilac',category:'indoor',name:'라일락 실내복',price:20,icon:'👕',note:'실내에서 입는 포근한 새 옷',cell:2},
  {id:'outdoor-sage',category:'outdoor',name:'세이지 외출복',price:24,icon:'🧥',note:'산책과 나들이에 입는 새 옷',cell:6},

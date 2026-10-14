@@ -1,4 +1,4 @@
-import {assembledAvatar,partsFor} from './wardrobe-parts.js?v=fit3';
+import {assembledAvatar,partsFor} from './wardrobe-parts.js?v=head4';
 import {welcomeProject} from './welcome.js';
 import {welcomeBoard} from './welcome-view.js';
 import {wardrobeCell,clothingName,outdoorActivities} from './wardrobe.js';
