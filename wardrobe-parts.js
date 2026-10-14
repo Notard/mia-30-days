@@ -1,4 +1,4 @@
-// Each atlas cell shares the base body's coordinate system; no item-specific resize.
+// Garments use measured crop bounds and body anchors from the atlas.
 export const partItems=[
  {id:'top-rose',slot:'top',name:'분홍 포근한 맨투맨',cell:1,price:0},
  {id:'top-mint',slot:'top',name:'민트 카디건',cell:2,price:14},
@@ -38,24 +38,32 @@ export const partRegistration=[
  [256,165,256,235,15,174,244,194],
  [512,165,256,235,15,174,244,194],
  [768,165,256,235,15,174,244,194],
- [0,685,256,400,52,335,183,252],
- [256,685,256,400,52,335,183,252],
- [512,685,256,270,52,335,183,182],
- [768,685,256,270,52,335,183,182],
+ [0,685,256,400,35,318,200,270],
+ [256,685,256,400,35,318,200,270],
+ [512,685,256,270,35,318,200,198],
+ [768,685,256,270,35,318,200,198],
  [0,1380,256,130,66,576,159,68],
  [256,1380,256,130,66,576,159,68],
  [512,1130,256,280,80,179,173,257],
  [768,1130,256,280,80,179,173,257],
 ];
-export function partLayer(cell){
+export function partLayer(cell,clip=''){
  const [x,y,w,h,dx,dy,dw,dh]=partRegistration[cell];
- return `<span class="paper-layer" style="left:${dx/256*100}%;top:${dy/650*100}%;width:${dw/256*100}%;height:${dh/650*100}%;background-size:${1024/w*100}% ${1536/h*100}%;background-position:${x/(1024-w)*100}% ${y/(1536-h)*100}%" aria-hidden="true"></span>`;
+ return `<span class="paper-layer" style="${clip}left:${dx/256*100}%;top:${dy/650*100}%;width:${dw/256*100}%;height:${dh/650*100}%;background-size:${1024/w*100}% ${1536/h*100}%;background-position:${x/(1024-w)*100}% ${y/(1536-h)*100}%" aria-hidden="true"></span>`;
 }
 export function assembledAvatar(s,outdoor=false,classes=''){
  const p=partsFor(s),look=p[outdoor?'outdoor':'indoor'];
  const cells=['bottom','top','shoes','bag'].map(slot=>partItems.find(i=>i.id===look[slot])?.cell).filter(c=>c!==undefined);
  const label=Object.values(look).map(id=>partItems.find(i=>i.id===id)?.name).filter(Boolean).join(' · ')||'편안한 반팔 티와 반바지';
- return `<div class="wardrobe-avatar paper-doll ${classes}" role="img" aria-label="${label} 차림의 미아">${partLayer(0)}${cells.map(partLayer).join('')}</div>`;
+ const coveredBottom=look.bottom!=='none';
+ let base=coveredBottom?partLayer(0,'clip-path:polygon(0 0,100% 0,100% 50%,0 50%);')+partLayer(0,'clip-path:polygon(0 63.5%,100% 63.5%,100% 100%,0 100%);')+partLayer(0,'clip-path:polygon(0 50%,27% 50%,27% 63.5%,0 63.5%);')+partLayer(0,'clip-path:polygon(84% 50%,100% 50%,100% 63.5%,84% 63.5%);'):partLayer(0);
+ if(look.top!=='none'){
+  // Hide the base T-shirt, keeping the head, hands and front braids visible.
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 650"><rect width="256" height="650" fill="white"/><rect x="60" y="192" width="165" height="135" fill="black"/><rect x="86" y="192" width="29" height="51" fill="white"/><rect x="165" y="192" width="30" height="51" fill="white"/></svg>';
+  const mask=`mask-image:url('data:image/svg+xml,${encodeURIComponent(svg)}');mask-mode:luminance;`;
+  base=base.replaceAll('style="',`style="${mask}`);
+ }
+ return `<div class="wardrobe-avatar paper-doll ${classes}" role="img" aria-label="${label} 차림의 미아">${base}${cells.map(cell=>partLayer(cell)).join('')}</div>`;
 }
 export function partsDialog(s,outdoor=false){
  const p=partsFor(s),place=outdoor?'outdoor':'indoor',look=p[place];
